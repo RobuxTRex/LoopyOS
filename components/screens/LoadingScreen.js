@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 export default function LoadingScreen({ setState }) {
   useEffect(() => {
     const timeout = setTimeout(() => {
-      const users = window.localStorage.getItem('users') ?? []
+      const users = localStorage.getItem("users")
 
-      if (users.length === 0) {
+      if (!users) {
         return setState('setup')
       }
-    }, 5000)
+
+      setState('start')
+    }, 2000)
 
     return () => clearTimeout(timeout)
   }, [])

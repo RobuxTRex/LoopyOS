@@ -6,6 +6,7 @@ import OSError from '../util/OSError'
 import LoadingScreen from '../components/screens/LoadingScreen'
 import SetupScreen from '../components/screens/SetupScreen'
 import ErrorScreen from '../components/screens/ErrorScreen'
+import StartScreen from '../components/screens/StartScreen'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -27,11 +28,19 @@ class ErrorBoundary extends React.Component {
 }
 
 function OS() {
-  const [state, setState] = useState('loading')
+  const [state, setState] = useState(null)
 
   function getComponent() {
-    if (state === 'loading') {
+    if (state === null) {
       return LoadingScreen
+    }
+
+    if (state === 'setup') {
+      return SetupScreen
+    }
+
+    if (state === 'start') {
+      return StartScreen
     }
 
     throw new OSError('UNEXPECTED_OS_STATE', { state })

@@ -1,13 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
-import Button from '../components/Button'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.scss';
+import Button from '../components/Button';
+import react from 'react';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
         <title>LoopyOS - Start</title>
+        
       </Head>
       
       <div>
