@@ -1,5 +1,5 @@
 import styles from './SetupScreen.module.scss'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import Button from '../Button'
 import * as Yup from 'yup'
@@ -11,9 +11,7 @@ function Introduction({ nextStep }) {
       <h1 className={styles.introductionTitle}>Welcome to LoopyOS!</h1>
       <p className={styles.introductionText}>Let's get started!</p>
 
-      <Button onClick={nextStep} className={styles.button}>
-        Setup
-      </Button>
+      <Button onClick={nextStep}>Setup</Button>
     </div>
   )
 }
@@ -34,8 +32,8 @@ function CreateUser({ setValues, nextStep }) {
         username: '',
         password: '',
       }}
-      onSubmit={(values) => {
-        setValues((prev) => ({ ...prev, ...values }))
+      onSubmit={values => {
+        setValues(prev => ({ ...prev, ...values }))
         nextStep()
       }}
       validationSchema={CreateUserSchema}
@@ -74,28 +72,29 @@ function CreateUser({ setValues, nextStep }) {
 }
 
 function Complete({ values, setState }) {
+  function handleClick() {
+    const users = JSON.parse(localStorage.getItem('users') ?? '[]')
+
+    const user = {
+      username: values.username,
+      password: values.password,
+    }
+
+    localStorage.setItem('users', JSON.stringify([...users, user]))
+
+    setState(null)
+  }
+
+  useEffect(() => handleClick(), [])
+
+  return null
+
   return (
     <div className={styles.complete}>
       <h1 className={styles.completeTitle}>Setup Finished</h1>
       <p className={styles.completeText}>Let's start!</p>
 
-      <Button
-        onClick={() => {
-          const users = JSON.parse(localStorage.getItem('users') ?? '[]')
-
-          const user = {
-            username: values.username,
-            password: values.password,
-          }
-
-          localStorage.setItem('users', JSON.stringify([...users, user]))
-
-          setState(null)
-        }}
-        className={styles.button}
-      >
-        Start
-      </Button>
+      <Button onClick={handleClick}>Start</Button>
     </div>
   )
 }
@@ -105,7 +104,7 @@ export default function SetupScreen({ setState }) {
   const [values, setValues] = React.useState({})
   const controls = useAnimation()
 
-  const steps = [Introduction, CreateUser, Complete]
+  const steps = [CreateUser, Complete]
 
   const Step = steps[step]
 
@@ -117,13 +116,7 @@ export default function SetupScreen({ setState }) {
 
   return (
     <div className={styles.container}>
-      <motion.div
-        layout
-        className={styles.root}
-        onLayoutAnimationComplete={async () => {
-          await controls.start({ opacity: 1 })
-        }}
-      >
+      <motion.div className={styles.root}>
         <motion.div
           initial={{
             opacity: 0,
@@ -133,7 +126,8 @@ export default function SetupScreen({ setState }) {
           <Step
             nextStep={async () => {
               await controls.start({ opacity: 0 })
-              setStep((step) => step + 1)
+              setStep(step => step + 1)
+              await controls.start({ opacity: 1 })
             }}
             setValues={setValues}
             setState={setState}

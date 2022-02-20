@@ -9,9 +9,14 @@
 }
 
 .root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: white;
   border-radius: 0.5rem;
   padding: 2rem;
+  min-width: 24rem;
+  min-height: 30rem;
 }
 
 .form {
@@ -24,6 +29,7 @@
 }
 
 .button {
+  margin-top: 1rem;
   width: 100%;
 }
 
@@ -56,9 +62,9 @@
 }
 
 .formTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 

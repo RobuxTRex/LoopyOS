@@ -6,6 +6,7 @@ import LoadingScreen from '../components/screens/LoadingScreen'
 import SetupScreen from '../components/screens/SetupScreen'
 import ErrorScreen from '../components/screens/ErrorScreen'
 import StartScreen from '../components/screens/StartScreen'
+import { AnimatePresence, motion } from 'framer-motion'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -53,7 +54,16 @@ function OS() {
         <title>LoopyOS</title>
       </Head>
 
-      <Component setState={setState} />
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          key={state}
+        >
+          <Component setState={setState} />
+        </motion.div>
+      </AnimatePresence>
     </>
   )
 }

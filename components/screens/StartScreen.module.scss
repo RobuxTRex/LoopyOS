@@ -1,4 +1,82 @@
 .container {
-  background: url('/notwindows.png');
+  background: url('/notwindows.jpg');
   background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.time {
+  font-size: 4rem;
+}
+
+.date {
+  font-size: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.login {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  background-color: #afafaf;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.loginForm {
+  display: flex;
+}
+
+.loginButton {
+  padding: 0.5rem;
+  background-color: #006eff;
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
+    width: 1rem;
+    height: 1rem;
+    fill: white;
+  }
+}
+
+.error {
+  color: #eb0000;
+  text-align: left;
 }

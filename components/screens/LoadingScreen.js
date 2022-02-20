@@ -1,24 +1,27 @@
 import React, { useEffect } from 'react'
 import styles from './LoadingScreen.module.scss'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 
 export default function LoadingScreen({ setState }) {
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const users = localStorage.getItem('users')
+  const controls = useAnimation()
 
+  useEffect(() => {
+    const timeout = setTimeout(async () => {
+      await controls.start({ opacity: 0, transition: { duration: 1.5 } })
+
+      const users = localStorage.getItem('users')
       if (!users) {
         return setState('setup')
       }
 
       setState('start')
-    }, 2000)
+    }, 4000)
 
     return () => clearTimeout(timeout)
   }, [])
 
   return (
-    <div className={styles.container}>
+    <motion.div className={styles.container} animate={controls}>
       <svg viewBox="0 0 24 24" className={styles.svg}>
         <motion.circle
           cx="12"
@@ -40,6 +43,6 @@ export default function LoadingScreen({ setState }) {
           }}
         />
       </svg>
-    </div>
+    </motion.div>
   )
 }

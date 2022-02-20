@@ -14,7 +14,7 @@ export default function Home() {
       <div>
         <h1 className={styles.title}>LoopyOS</h1>
 
-        <Button href="/os">Start and luka sux</Button>
+        <Button href="/os">Start</Button>
       </div>
     </div>
   )

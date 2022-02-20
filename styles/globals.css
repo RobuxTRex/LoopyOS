@@ -47,7 +47,8 @@ input {
   font-weight: normal;
   color: var(--text-color);
   padding: 0.5rem;
-  width: 16rem;
+  width: 100%;
   border-radius: 0.25rem;
   outline-color: #004fe2;
+  font-family: var(--font-family);
 }
