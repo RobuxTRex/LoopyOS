@@ -14,7 +14,7 @@ function Introduction({ nextStep }) {
       <Button onClick={nextStep} className={styles.button}>
         Setup
       </Button>
-    </div>
+    </div> 
   );
 }
 
