@@ -68,7 +68,7 @@ function OS() {
   )
 }
 
-export default function () {
+export default function WrappedOS() {
   return (
     <ErrorBoundary>
       <OS />

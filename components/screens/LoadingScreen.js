@@ -18,7 +18,7 @@ export default function LoadingScreen({ setState }) {
     }, 4000)
 
     return () => clearTimeout(timeout)
-  }, [])
+  }, [controls, setState])
 
   return (
     <motion.div className={styles.container} animate={controls}>

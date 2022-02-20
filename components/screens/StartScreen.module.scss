@@ -68,11 +68,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease-in-out;
 
   & svg {
     width: 1rem;
     height: 1rem;
     fill: white;
+  }
+
+  &:hover {
+    background-color: #005ce6;
   }
 }
 

@@ -9,7 +9,7 @@ function Introduction({ nextStep }) {
   return (
     <div className={styles.introduction}>
       <h1 className={styles.introductionTitle}>Welcome to LoopyOS!</h1>
-      <p className={styles.introductionText}>Let's get started!</p>
+      <p className={styles.introductionText}>Let&apos;s get started!</p>
 
       <Button onClick={nextStep}>Setup</Button>
     </div>
@@ -85,14 +85,14 @@ function Complete({ values, setState }) {
     setState(null)
   }
 
-  useEffect(() => handleClick(), [])
+  useEffect(() => handleClick(), [handleClick])
 
   return null
 
   return (
     <div className={styles.complete}>
       <h1 className={styles.completeTitle}>Setup Finished</h1>
-      <p className={styles.completeText}>Let's start!</p>
+      <p className={styles.completeText}>Let&apos;s start!</p>
 
       <Button onClick={handleClick}>Start</Button>
     </div>
@@ -112,7 +112,7 @@ export default function SetupScreen({ setState }) {
     controls.start({
       opacity: 1,
     })
-  }, [])
+  }, [controls])
 
   return (
     <div className={styles.container}>
