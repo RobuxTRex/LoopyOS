@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import { motion } from "framer-motion"
 import OSError from '../util/OSError'
 
 import LoadingScreen from '../components/screens/LoadingScreen'
@@ -10,12 +9,12 @@ import StartScreen from '../components/screens/StartScreen'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { error: null };
+    super(props)
+    this.state = { error: null }
   }
 
   static getDerivedStateFromError(error) {
-    return { error };
+    return { error }
   }
 
   render() {
@@ -23,7 +22,7 @@ class ErrorBoundary extends React.Component {
       return <ErrorScreen error={this.state.error} />
     }
 
-    return this.props.children; 
+    return this.props.children
   }
 }
 
@@ -59,7 +58,7 @@ function OS() {
   )
 }
 
-export default function() {
+export default function () {
   return (
     <ErrorBoundary>
       <OS />

@@ -1,9 +1,9 @@
-import styles from "./SetupScreen.module.scss";
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import Button from "../Button";
-import * as Yup from "yup";
-import { motion, useAnimation } from "framer-motion";
+import styles from './SetupScreen.module.scss'
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import Button from '../Button'
+import * as Yup from 'yup'
+import { motion, useAnimation } from 'framer-motion'
 
 function Introduction({ nextStep }) {
   return (
@@ -14,29 +14,29 @@ function Introduction({ nextStep }) {
       <Button onClick={nextStep} className={styles.button}>
         Setup
       </Button>
-    </div> 
-  );
+    </div>
+  )
 }
 
 const CreateUserSchema = Yup.object({
   username: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
 
-  password: Yup.string().min(8, "Too Short!").required("Required"),
-});
+  password: Yup.string().min(8, 'Too Short!').required('Required'),
+})
 
 function CreateUser({ setValues, nextStep }) {
   return (
     <Formik
       initialValues={{
-        username: "",
-        password: "",
+        username: '',
+        password: '',
       }}
       onSubmit={(values) => {
-        setValues((prev) => ({ ...prev, ...values }));
-        nextStep();
+        setValues((prev) => ({ ...prev, ...values }))
+        nextStep()
       }}
       validationSchema={CreateUserSchema}
     >
@@ -70,7 +70,7 @@ function CreateUser({ setValues, nextStep }) {
         </div>
       </Form>
     </Formik>
-  );
+  )
 }
 
 function Complete({ values, setState }) {
@@ -81,39 +81,39 @@ function Complete({ values, setState }) {
 
       <Button
         onClick={() => {
-          const users = JSON.parse(localStorage.getItem("users") ?? "[]");
+          const users = JSON.parse(localStorage.getItem('users') ?? '[]')
 
           const user = {
             username: values.username,
             password: values.password,
-          };
+          }
 
-          localStorage.setItem("users", JSON.stringify([...users, user]));
+          localStorage.setItem('users', JSON.stringify([...users, user]))
 
-          setState(null);
+          setState(null)
         }}
         className={styles.button}
       >
         Start
       </Button>
     </div>
-  );
+  )
 }
 
 export default function SetupScreen({ setState }) {
-  const [step, setStep] = React.useState(0);
-  const [values, setValues] = React.useState({});
-  const controls = useAnimation();
+  const [step, setStep] = React.useState(0)
+  const [values, setValues] = React.useState({})
+  const controls = useAnimation()
 
-  const steps = [Introduction, CreateUser, Complete];
+  const steps = [Introduction, CreateUser, Complete]
 
-  const Step = steps[step];
+  const Step = steps[step]
 
   React.useEffect(() => {
     controls.start({
       opacity: 1,
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -121,7 +121,7 @@ export default function SetupScreen({ setState }) {
         layout
         className={styles.root}
         onLayoutAnimationComplete={async () => {
-          await controls.start({ opacity: 1 });
+          await controls.start({ opacity: 1 })
         }}
       >
         <motion.div
@@ -132,8 +132,8 @@ export default function SetupScreen({ setState }) {
         >
           <Step
             nextStep={async () => {
-              await controls.start({ opacity: 0 });
-              setStep(step => step + 1)
+              await controls.start({ opacity: 0 })
+              setStep((step) => step + 1)
             }}
             setValues={setValues}
             setState={setState}
@@ -142,5 +142,5 @@ export default function SetupScreen({ setState }) {
         </motion.div>
       </motion.div>
     </div>
-  );
+  )
 }

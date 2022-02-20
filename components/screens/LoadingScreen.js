@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import styles from "./LoadingScreen.module.scss";
-import { motion } from "framer-motion";
+import React, { useEffect } from 'react'
+import styles from './LoadingScreen.module.scss'
+import { motion } from 'framer-motion'
 
 export default function LoadingScreen({ setState }) {
   useEffect(() => {
     const timeout = setTimeout(() => {
-      const users = localStorage.getItem("users")
+      const users = localStorage.getItem('users')
 
       if (!users) {
         return setState('setup')
@@ -41,5 +41,5 @@ export default function LoadingScreen({ setState }) {
         />
       </svg>
     </div>
-  );
+  )
 }
