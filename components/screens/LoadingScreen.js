@@ -1,25 +1,43 @@
-import React, { useEffect } from 'react'
-import styles from './LoadingScreen.module.scss'
-import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect } from "react";
+import styles from "./LoadingScreen.module.scss";
+import { motion } from "framer-motion";
 
-export default function LoadingScreen() {
-  const controls = useAnimation()
-
+export default function LoadingScreen({ setState }) {
   useEffect(() => {
-    let mounted = true
-    const sequence = async () => {
-      await controls.start({ x: 0 })
-      await controls.start({ opacity: 1 })
-    }
+    const timeout = setTimeout(() => {
+      const users = window.localStorage.getItem('users') ?? []
 
-    return () => mounted = false
+      if (users.length === 0) {
+        return setState('setup')
+      }
+    }, 5000)
+
+    return () => clearTimeout(timeout)
   }, [])
 
   return (
     <div className={styles.container}>
-      <motion.svg viewBox="0 0 24 24" animate={useAnimation}>
-        <circle cx="12" cy="12" r="10" />
-      </motion.svg>
+      <svg viewBox="0 0 24 24" className={styles.svg}>
+        <motion.circle
+          cx="12"
+          cy="12"
+          r="11"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          animate={{
+            scale: [0, 1],
+            opacity: [1, 1, 0],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 1.2,
+          }}
+          initial={{
+            scale: 0,
+          }}
+        />
+      </svg>
     </div>
-  )
+  );
 }

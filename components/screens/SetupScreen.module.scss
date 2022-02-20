@@ -1,0 +1,45 @@
+.title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-size: 40px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    font-size: 20px;
+  }
+
+  
+  
+  .container {
+    background-color: #bdfeff;
+    height: 100vh;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+
+  .titlecontainer {
+    background-color: #bdfeff;
+  }
+
+  .link {
+    font-weight: 700;
+  }
+  
+  .button {
+    background-color: #222225;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    color: white;
+    transition: all 0.2s ease-in-out;
+  
+    &:hover {
+      background-color: #111111;
+    }
+  }
+
+
+  
