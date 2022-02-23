@@ -1,0 +1,76 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+  background: url('/background.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+.window {
+  display: inline-block;
+  background-color: red;
+}
+
+.taskBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.5rem;
+  background-color: #00000098;
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+  backdrop-filter: blur(50px);
+}
+
+.time {
+  font-size: 4rem;
+}
+
+.date {
+  font-size: 1.2rem;
+}
+
+.startMenu {
+  position: fixed;
+  bottom: 4rem;
+  left: 0.5rem;
+  height: 25rem;
+  width: 25rem;
+  background-color: #00000098;
+  display: flex;
+  align-items: left;
+  backdrop-filter: blur(50px);
+  border-radius: 0.5rem;
+}
+
+.startFlex {
+  background-color: white;
+  position: fixed;
+  bottom: 4rem;
+  left: 20rem;
+}
+
+.startFlexButton {
+  &:hover {
+    background-color: #ffffff79;
+  }
+}
+
+.logo {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.taskBarButton {
+  display: flex;
+  background: none;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #ffffff15;
+  }
+}

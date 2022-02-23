@@ -1,5 +1,5 @@
 .container {
-  background: url('/notwindows.jpg');
+  background: url('/background.png');
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -16,6 +16,10 @@
 
 .date {
   font-size: 1.2rem;
+}
+
+.text {
+  font-size: 3rem;
 }
 
 .overlay {

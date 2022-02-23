@@ -1,5 +1,5 @@
 import styles from './SetupScreen.module.scss'
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import Button from '../Button'
 import * as Yup from 'yup'
@@ -72,7 +72,7 @@ function CreateUser({ setValues, nextStep }) {
 }
 
 function Complete({ values, setState }) {
-  function handleClick() {
+  const handleClick = useCallback(function handleClick() {
     const users = JSON.parse(localStorage.getItem('users') ?? '[]')
 
     const user = {
@@ -83,7 +83,7 @@ function Complete({ values, setState }) {
     localStorage.setItem('users', JSON.stringify([...users, user]))
 
     setState(null)
-  }
+  }, [])
 
   useEffect(() => handleClick(), [handleClick])
 
