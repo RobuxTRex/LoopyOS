@@ -1,27 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+LoopyOS - Virtual Operating System in the Browser!
 
-## Getting Started
+LoopyOS is a Virtual Operating Environment in your Browser.
+Currently, it is a Work-In-Progress, though, here's a list of what's planned for the future:
+- Run any files, without it harming your Physical Environment (your PC)
+- Use custom made applciations, including Web Browsers!
+- Connect to other environments with permission and interact with their VOE (Virtual Operating Environment)
+- Upload files to the VOE, good for testing malicious software and it's effects on your computer (may not work with LoopyOS)
+- Access your files from anywhere using anything.
 
-First, run the development server:
+LoopyOS is modern, making it look sleek and fits with the current era of computing virtually (VC - Virtual Computer & PC - Physical Computer)
+Have fun with the OS and make sure to open an issue if you have a problem or star and watch if you enjoy this OS.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-EEEEEEEEEEEEEEEEEEEEEEEEEE
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The term VC should not be mistaken for Voice Call or Video Call.
+The term PC should not be mistaken for Personal Computer or Personal Computing.
