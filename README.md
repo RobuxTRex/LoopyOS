@@ -13,3 +13,18 @@ Have fun with the OS and make sure to open an issue if you have a problem or sta
 
 The term VC should not be mistaken for Voice Call or Video Call.
 The term PC should not be mistaken for Personal Computer or Personal Computing.
+
+NOTE:
+
+All user account passwords are stored in your browser's data storage.
+This means that your password is always safe and never stored in any datastores.
+If you would like to get your password, please follow the following instructions:
+
+- Open 'Inspect Element' (CTRL + SHIFT + I for most browsers)
+- Go to the 'Application' tab
+- Local Store tab (under Storage)
+- Click on the link (usually https://robuxtrex.github.io
+- Look at the 'Value(s)' area at the right of your screen
+- Copy the 'Password' value
+
+Thats it; though, the tutorial above was made with Google Chrome, so if it doesn't work for you, that's why.
