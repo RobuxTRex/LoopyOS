@@ -23,7 +23,7 @@ If you would like to get your password, please follow the following instructions
 - Open 'Inspect Element' (CTRL + SHIFT + I for most browsers)
 - Go to the 'Application' tab
 - Local Store tab (under Storage)
-- Click on the link (usually https://robuxtrex.github.io
+- Click on the link (usually https://robuxtrex.github.io)
 - Look at the 'Value(s)' area at the right of your screen
 - Copy the 'Password' value
 
