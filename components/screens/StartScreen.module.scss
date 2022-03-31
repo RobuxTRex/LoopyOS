@@ -1,21 +1,26 @@
 .container {
-  background: url('/background.png');
+  background: url('/LoopyOS/background.webp');
   background-size: cover;
   background-position: center center;
   height: 100vh;
   display: flex;
-  color: white;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+.smallprint {
+  font-size: 0.25rem;
+}
+
 .time {
   font-size: 4rem;
+  mix-blend-mode: multiply;
 }
 
 .date {
   font-size: 1.2rem;
+  mix-blend-mode: multiply;
 }
 
 .text {
@@ -28,7 +33,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -38,7 +42,7 @@
 
 .login {
   padding: 2rem;
-  background-color: white;
+  background-color: #ffffff3b;
   border-radius: 0.5rem;
   color: var(--text-color);
   display: flex;

@@ -1,9 +1,16 @@
 .container {
   height: 100vh;
   overflow: hidden;
-  background: url('/background.png');
+  background: url('/LoopyOS/background.webp');
   background-size: cover;
   background-position: center center;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .window {
@@ -17,7 +24,7 @@
   left: 0;
   right: 0;
   height: 3.5rem;
-  background-color: #00000098;
+  background-color: #ffffff18;
   display: flex;
   align-items: center;
   padding: 0 0.8rem;
@@ -25,11 +32,17 @@
 }
 
 .time {
-  font-size: 4rem;
+  font-weight: 400;
+  text-align: right;
+  font-size: 1rem;
 }
 
-.date {
-  font-size: 1.2rem;
+.flexGrow {
+  flex-grow: 1;
+}
+
+.startMenuUpper {
+  text-align: center;
 }
 
 .startMenu {
@@ -38,24 +51,10 @@
   left: 0.5rem;
   height: 25rem;
   width: 25rem;
-  background-color: #00000098;
+  background-color: #ffffff18;
   display: flex;
-  align-items: left;
   backdrop-filter: blur(50px);
   border-radius: 0.5rem;
-}
-
-.startFlex {
-  background-color: white;
-  position: fixed;
-  bottom: 4rem;
-  left: 20rem;
-}
-
-.startFlexButton {
-  &:hover {
-    background-color: #ffffff79;
-  }
 }
 
 .logo {
@@ -71,6 +70,10 @@
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: #ffffff15;
+    background-color: #0000002d;
   }
+}
+
+.windowConstraints {
+  height: calc(100vh - 3.5rem);
 }

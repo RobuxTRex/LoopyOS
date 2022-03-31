@@ -15,6 +15,10 @@ export default function Home() {
         <h1 className={styles.title}>LoopyOS</h1>
 
         <Button href="/os">Start</Button>
+
+        <p className={styles.basictext}>
+          LoopyOS is an OS made for the browser. Press start to begin Setup and the OS will begin to load.
+        </p>
       </div>
     </div>
   )
