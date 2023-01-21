@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  background-color: #ffaaaa;
+  padding: 2rem;
+}
+
+.root {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+}
+
+.errorTitle {
+  font-weight: 500;
+}
+
+.errorInfo {
+  & > li {
+    list-style-type: none;
+  }
+}

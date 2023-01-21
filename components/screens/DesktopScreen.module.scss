@@ -1,0 +1,154 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+  background: url('/background.webp');
+  background-size: cover;
+  background-position: center center;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.window {
+  display: inline-block;
+  background-color: red;
+}
+
+.taskBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.5rem;
+  background-color: #ffffff18;
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+  backdrop-filter: blur(50px);
+}
+
+.time {
+  font-weight: 400;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.flexGrow {
+  flex-grow: 1;
+}
+
+.startMenuUpper {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  flex: auto;
+  display: block;
+}
+
+.startMenuUpperB {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 2rem;
+  flex: auto;
+  display: block;
+  font-weight: bolder;
+}
+
+.timeMenuUpper {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.timeMenuWeek {
+  display: flexbox;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.startMenu {
+  position: fixed;
+  bottom: 4rem;
+  left: 0.5rem;
+  height: 25rem;
+  width: 25rem;
+  background-color: #ffffff18;
+  display: none;
+  backdrop-filter: blur(50px);
+  border-radius: 0.5rem;
+}
+
+.trashText {
+  font-size: 1rem;
+  padding-top: 5rem;
+  display: contents;
+}
+
+.timeMenu {
+  position: fixed;
+  align-self: center;
+  bottom: 4rem;
+  left: 99.5rem;
+  height: 6rem;
+  width: 20rem;
+  background-color: #ffffff18;
+  display: none;
+  backdrop-filter: blur(50px);
+  border-radius: 0.5rem;
+}
+
+.logo {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.taskBarButton {
+  display: flex;
+  background: none;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #0000002d;
+  }
+}
+
+.windowConstraints {
+  height: calc(100vh - 3.5rem);
+  display: none;
+}
+
+.timeButton {
+  background: url('/transparent')
+}
+
+.contextMenu {
+  position: fixed;
+  z-index: 10000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+}
+
+.contextMenuItem {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: inherit;
+}
+
+.contextMenuItem:hover {
+  background: #343434;
+}
+
+.infiniteZindex {
+  z-index: 69696969;
+}
+
+.desktop {
+  vertical-align: top;
+}
